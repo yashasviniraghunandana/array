@@ -1,0 +1,27 @@
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        vector<int> outList;
+        std::map<int,int> myMap;
+        int i =0;
+        //for(vector<int>:: iterator it = nums.begin(); it != nums.end(); it++)
+        for(i=0;i<nums.size();i++)
+        {
+            
+            //if(target - *it != 0)
+            if(myMap.find(target-nums[i]) !=myMap.end())
+            {
+                //cout<<"yash"<<endl;
+               
+               outList.push_back(myMap[target - nums[i]]);
+            outList.push_back(i);
+            return outList;
+            }    
+            else
+                myMap[nums[i]] = i;
+            //else
+              
+        }
+        return outList;
+    }
+};
